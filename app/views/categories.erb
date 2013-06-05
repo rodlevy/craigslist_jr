@@ -1,0 +1,18 @@
+<h1>WELCOME TO JR LISTS of LISTS</h1>
+
+<ul>
+  <%@categories.each do |cat|%>
+  <li>
+    <a href="/<%=cat.title%>/posts"><%= cat.title%></a>
+    <br>
+    <br>
+    <form name='create' action="/<%=cat.title%>/create" method='get'>
+    <input type='submit' value='Create New Post'>
+  </form>
+
+  </li><br>
+  <%end%>
+
+  <div>
+  </div>
+</ul>

@@ -1,0 +1,13 @@
+ <form name="post_input" action='/<%=@category%>/create' method='post'>
+  <h1> <%=@category%></h1><br>
+  <ul>
+
+  <div>Title: <input type='text' name='title'></div>
+  <div>Description: <input type='text' name='description'></div>
+  <div>Price: <input type='text' name='price'></div>
+  <div>Your Email: <input type='text' name='email'></div>
+  <div><input type='hidden' name='category' value='<%=@category%>'></div>
+ 
+  <input type = 'submit' value='Hit Me!'>
+  </form>
+  <br>

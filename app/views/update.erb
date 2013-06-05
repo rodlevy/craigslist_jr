@@ -3,10 +3,6 @@
 
 <div>Do You Wish to update any of the following?</div>
 
-
-
-
-
  <form name="post_input" action='/update' method='post'>
  
   <ul>
@@ -14,7 +10,6 @@
   <div>Title: <input type='text' name='title'></div>
   <div>Description: <input type='text' name='description'></div>
   <div>Price: <input type='text' name='price'></div>
-  <div>Your Email: <input type='text' name='email'></div>
   <div><input type='hidden' name='item_key' value='<%=@item_key%>'></div>
  
   <input type = 'submit' value='Hit Me!'>
@@ -22,12 +17,3 @@
   <br>
 
 
-
-
-
- <!-- @new_post = Post.create(:title => params[:title],
-  			  :description => params[:description],
-  			  :price	=> params[:price],	
-  			  :category_id => category_id,
-  			  :email =>  params[:email],
-  			  :item_key => item_key) -->

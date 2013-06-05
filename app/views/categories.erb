@@ -1,4 +1,4 @@
-<h1>WELCOME TO JR LISTS of LISTS</h1>
+<h1>Welcome to Craigslist Jr.</h1>
 
 <ul>
   <%@categories.each do |cat|%>
@@ -16,3 +16,11 @@
   <div>
   </div>
 </ul>
+
+<footer>
+  <form name='update' action="/update/" method='get'>
+    <input type='text' name='item_key' placeholder="User Key">
+    <input type='submit' value="Update Your Listing">
+
+  </form>
+</footer>

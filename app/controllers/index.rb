@@ -1,5 +1,4 @@
 get '/' do
-  # Look in app/views/index.erb
   @categories = Category.all
   erb :categories
 end
@@ -24,14 +23,19 @@ get '/:category/create' do
   @item_key = rand(1..100)
   category_id = Category.find_by_title(params[:category]).id
   @new_post = Post.create(:title => params[:title],
-  			  :description => params[:description],
-  			  :price	=> params[:price],	
-  			  :category_id => category_id,
-  			  :email =>  params[:email],
-  			  :item_key => @item_key)
+  			                 :description => params[:description],
+  			                 :price	=> params[:price],	
+  			                 :category_id => category_id,
+  			                 :email =>  params[:email],
+  			                 :item_key => @item_key)
   erb :update
 
+end
 
+get '/update/:item_key' do
+  p "made it"
+  @item_key = params[:item_key]
+  erb :update
 end
 
 
@@ -43,11 +47,12 @@ get '/:category/:post_id' do
 end
 
 
-
-
-
 post '/update' do
-
+    @update_post= Post.find_by_item_key(params[:item_key])
+    @update_post.update_attributes(:title => params[:title],
+                         :description => params[:description],
+                         :price => params[:price])
+    redirect to '/'
 end
 
 # Todo:
